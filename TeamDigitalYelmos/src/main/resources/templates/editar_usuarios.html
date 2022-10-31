@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeLeaf.org">
+<head>
+<meta charset="utf-8">
+<title>Editar</title>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div
+				class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class="text-center">Editar usuario</h1>
+				<div class="card-body">
+					<form th:action="@{/usuarios/{idU}(idU=${usuario.idU})}"
+						th:object="${usuario}" method="POST">
+						<div class="row">
+							<div class="col">
+								<label>NOMBRE:</label> <input type="text" name="nombre"
+									th:field="*{nomU}" class="form-control"
+									placeholder="Digite el nombre: " required>
+							</div>
+							<br>
+							<div class="col">
+								<label>APELLIDO:</label> <input type="text" name="apellido"
+									th:field="*{apeU}" class="form-control"
+									placeholder="Digite el apellido: " required>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col">
+								<label>EMAIL:</label> <input type="text" name="email"
+									th:field="*{emailU}" class="form-control"
+									placeholder="Digite un email: " required>
+							</div>
+							<br>
+							<div class="col">
+								<label>DOCUMENTO:</label> <input type="text" name="documento"
+									th:field="*{docuU}" class="form-control"
+									placeholder="Digite el documento: " required>
+							</div>
+						</div>
+						<br>
+						<div class="row">
+							<div class="col">
+								<label>ESTADO:</label> <input type="text" name="estado"
+									th:field="*{estadoU}" class="form-control"
+									placeholder="Digite el estado del usuario: " required>
+							</div>
+							<br>
+							<div class="col">
+								<label>CONTRASEÑA:</label> <input type="text" name="contraseña"
+									th:field="*{contraU}" class="form-control"
+									placeholder="Digite la contraseña: " required>
+							</div>
+							<br>
+							<!--<div class="col">
+								 <label>ROL</label> <input type="text" name="rol"
+									th:field="*{rol}" class="form-control"
+									placeholder="Digite el rol del usuario: " required>
+							</div>-->
+						</div>
+						<br>
+                        <div class="box-footer">
+                            <button class="btn btn-warning">Editar</button>
+                            <a class="btn btn-danger" th:href="@{/usuarios}">Cancelar</a>
+                        </div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+</body>
+</html>
